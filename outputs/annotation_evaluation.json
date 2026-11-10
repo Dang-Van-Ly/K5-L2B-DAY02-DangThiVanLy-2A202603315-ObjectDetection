@@ -1,12 +1,12 @@
 {
   "iou_match_threshold": 0.5,
-  "precision": 0.4216,
-  "recall": 0.7366,
-  "f1": 0.5362,
-  "mean_iou_of_matches": 0.8064,
-  "true_positive": 481,
-  "false_positive": 660,
-  "false_negative": 172,
+  "precision": 0.5165,
+  "recall": 0.7198,
+  "f1": 0.6014,
+  "mean_iou_of_matches": 0.8082,
+  "true_positive": 470,
+  "false_positive": 440,
+  "false_negative": 183,
   "passed": false,
   "required_f1": 0.8,
   "required_mean_iou": 0.7,
@@ -26,7 +26,7 @@
     {
       "image": "drive_003",
       "gold_boxes": 18,
-      "student_boxes": 46,
+      "student_boxes": 18,
       "matches": 16
     },
     {
@@ -38,20 +38,20 @@
     {
       "image": "drive_005",
       "gold_boxes": 24,
-      "student_boxes": 42,
+      "student_boxes": 23,
       "matches": 18
     },
     {
       "image": "drive_006",
       "gold_boxes": 21,
-      "student_boxes": 46,
+      "student_boxes": 24,
       "matches": 19
     },
     {
       "image": "drive_007",
       "gold_boxes": 13,
-      "student_boxes": 44,
-      "matches": 12
+      "student_boxes": 8,
+      "matches": 7
     },
     {
       "image": "drive_008",
@@ -170,8 +170,8 @@
     {
       "image": "drive_027",
       "gold_boxes": 31,
-      "student_boxes": 39,
-      "matches": 17
+      "student_boxes": 17,
+      "matches": 12
     },
     {
       "image": "drive_028",
@@ -194,7 +194,7 @@
     {
       "image": "drive_031",
       "gold_boxes": 14,
-      "student_boxes": 44,
+      "student_boxes": 21,
       "matches": 13
     },
     {
@@ -236,7 +236,7 @@
     {
       "image": "drive_038",
       "gold_boxes": 17,
-      "student_boxes": 40,
+      "student_boxes": 16,
       "matches": 14
     },
     {
@@ -254,7 +254,7 @@
     {
       "image": "drive_041",
       "gold_boxes": 24,
-      "student_boxes": 31,
+      "student_boxes": 23,
       "matches": 11
     },
     {
@@ -266,13 +266,13 @@
     {
       "image": "drive_043",
       "gold_boxes": 13,
-      "student_boxes": 36,
-      "matches": 11
+      "student_boxes": 12,
+      "matches": 10
     },
     {
       "image": "drive_044",
       "gold_boxes": 8,
-      "student_boxes": 33,
+      "student_boxes": 8,
       "matches": 7
     },
     {

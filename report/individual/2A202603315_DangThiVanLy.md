@@ -30,20 +30,21 @@ Tham chiếu [GUIDELINE_MINI.md](../../GUIDELINE_MINI.md). Schema lớp theo `da
 
 Gold QC dùng ngưỡng IoU match `0.50`. Kết quả ban đầu và các lần rework:
 
-| Chỉ số | Ban đầu | Rework 1 | Rework 2 | Rework 3 (gần nhất) |
-|---|---:|---:|---:|---:|
-| TP | 482 | 483 | 483 | 481 |
-| FP | 801 | 774 | 660 | 660 |
-| FN | 171 | 170 | 170 | 172 |
-| Precision | 0.3757 | 0.3842 | 0.4216 | 0.4216 |
-| Recall | 0.7381 | 0.7397 | 0.7397 | 0.7366 |
-| F1 | 0.4979 | 0.5058 | 0.5362 | 0.5362 |
-| mean_iou_of_matches | 0.8067 | 0.8072 | 0.8064 | 0.8064 |
-| passed | false | false | false | false |
+| Chỉ số | Ban đầu | Rework 1 | Rework 2 | Rework 3 | Rework 4 (gần nhất) |
+|---|---:|---:|---:|---:|---:|
+| TP | 482 | 483 | 483 | 481 | 470 |
+| FP | 801 | 774 | 660 | 660 | 440 |
+| FN | 171 | 170 | 170 | 172 | 183 |
+| Precision | 0.3757 | 0.3842 | 0.4216 | 0.4216 | 0.5165 |
+| Recall | 0.7381 | 0.7397 | 0.7397 | 0.7366 | 0.7198 |
+| F1 | 0.4979 | 0.5058 | 0.5362 | 0.5362 | 0.6014 |
+| mean_iou_of_matches | 0.8067 | 0.8072 | 0.8064 | 0.8064 | 0.8082 |
+| passed | false | false | false | false | false |
 
-Kết quả lần gần nhất được lưu tại `outputs/annotation_evaluation.json`. Mean IoU đạt ngưỡng `0.70`, nhưng F1 `0.5362` chưa đạt ngưỡng `0.80`; annotation gate chưa đạt và chưa được chuyển sang train theo quy trình.
+Kết quả lần gần nhất được lưu tại `outputs/annotation_evaluation.json`. Mean IoU đạt ngưỡng `0.70`, nhưng F1 `0.6014` chưa đạt ngưỡng `0.80`; annotation gate chưa đạt và chưa được chuyển sang train theo quy trình.
 
 - Rework đã thực hiện: qua các lần export, số box của student thay đổi ở một số ảnh, bao gồm drive_002 (47 xuống 12), drive_030 (49 xuống 21), drive_045 (47 xuống 21) và drive_049 (38 xuống 14). Các thay đổi số lượng không tự chứng minh từng box đã được sửa đúng; cần xác minh lý do bằng ảnh và schema.
+- Ở kết quả gần nhất, thống kê student/gold/matches gồm drive_007 (8/13/7), drive_027 (17/31/12), drive_038 (16/17/14), drive_043 (12/13/10), drive_044 (8/8/7). Đây là thống kê khớp, không tự xác định box cụ thể đúng/sai.
 - Kết quả cũ đã bị ghi đè trong `outputs/annotation_evaluation.json`; các số liệu của các lần trước được lưu trong bảng này.
 - Gold labels được giữ riêng, không đưa vào repo hoặc Colab.
 
@@ -83,7 +84,7 @@ Trả lời câu hỏi notebook sau khi chạy Colab:
 - Định dạng/số lượng nhãn: checker báo 50/50 file hợp lệ; độ đúng nội dung cần tiếp tục rà.
 - Đầy đủ vật thể, độ sát box và phân lớp: cần tiếp tục kiểm tra/rework; không kết luận đạt chỉ từ checker.
 - Mini guideline: cần xác minh các ca mơ hồ là quan sát thật và tên ảnh chính xác.
-- Gold-set annotation QC: chưa đạt; F1 gần nhất `0.5058`, mean IoU `0.8072`.
+- Gold-set annotation QC: chưa đạt; F1 gần nhất `0.6014`, mean IoU `0.8082`.
 - Pipeline YOLO và phân tích: chưa thực hiện.
 
 ## 8. Công cụ AI và tài liệu tham khảo
